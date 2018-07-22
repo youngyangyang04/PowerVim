@@ -1,0 +1,22 @@
+version: '{build}'
+image: Visual Studio 2017
+environment:
+  COVERAGE: true
+  matrix:
+  - arch: 32
+    python: 36
+  # We only test Python 2.7 on 64 bits.
+  - arch: 64
+    python: 27
+  - arch: 64
+    python: 36
+install:
+  - ci\appveyor\appveyor_install.bat
+build_script:
+  - python run_tests.py
+after_build:
+  - codecov
+# Disable automatic tests
+test: off
+cache:
+  - '%LOCALAPPDATA%\pip\cache'  # Python packages from pip

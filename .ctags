@@ -1,0 +1,15 @@
+--langdef=go
+--langmap=go:.go
+--regex-go=/func([ \t]+\([^)]+\))?[ \t]+([a-zA-Z0-9_]+)/\2/f,functions/
+--regex-go=/var[ \t]+([a-zA-Z_][a-zA-Z0-9_]+)/\1/v,variables/
+--regex-go=/type[ \t]+([a-zA-Z_][a-zA-Z0-9_]+)/\1/t,types/
+
+--langdef=markdown
+--langmap=markdown:.md
+--regex-markdown=/^#[ \t]+(.*)/-\1/h,heading1/
+--regex-markdown=/^##[ \t]+(.*)/-  \1/h,heading2/
+--regex-markdown=/^###[ \t]+(.*)/-    \1/h,heading3/
+--regex-markdown=/^####[ \t]+(.*)/-      \1/h,heading4/
+--regex-markdown=/^#####[ \t]+(.*)/-        \1/h,heading5/
+--regex-markdown=/^######[ \t]+(.*)/-          \1/h,heading6/
+--regex-markdown=/^#######[ \t]+(.*)/-            \1/h,heading7/

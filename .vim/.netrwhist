@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/users/sunxiuyang/tmp'
+let g:netrw_dirhist_2='/home/users/sunxiuyang'
+let g:netrw_dirhist_3='/Users/sunxiuyang'
+let g:netrw_dirhist_4='/Users/sunxiuyang/.ssh'
+let g:netrw_dirhist_5='/Users/sunxiuyang'
+let g:netrw_dirhist_6='/Users/sunxiuyang/.ssh'
+let g:netrw_dirhist_7='/Users/sunxiuyang'
+let g:netrw_dirhist_8='/Users/sunxiuyang/Documents/workplace/vim-conf'

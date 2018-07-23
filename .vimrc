@@ -83,18 +83,22 @@ map <Leader>2 $
 ""nmap <Leader>p <C-P>
 " 快速切换C H源文件
 nmap <Leader>a :A<CR>
+
 "快速切换到上一个文件
 " nmap <Leader>j :bn<CR>
 " nmap <Leader>k :bp<CR>
-nmap <Leader>k <C-W><C-K>
-"快速切换到下一个文件
-nmap <Leader>j <C-W><C-J>
+
 " 设置快捷键gs遍历各分割窗口。快捷键速记法：goto the next spilt window
 nnoremap <Leader>gg <C-W><C-W>
+
 " 向左
 nnoremap <leader>h <C-W><C-H>
 " 向右
 nnoremap <leader>l <C-W><C-L>
+" 向上
+nnoremap <Leader>k <C-W><C-K>
+" 向下
+nnoremap <Leader>j <C-W><C-J>
 " 切换到shell，vim在后台运行
 nmap <Leader>gs :shell<CR>
 " 去除高亮

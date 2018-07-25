@@ -114,7 +114,12 @@ nmap <Leader>v :Vex<CR>
 " 全局替换
 nmap <Leader>r :%s/[fileName-]/[fileName+]/g
 " 打tag
-nmap<leader>tg :!ctags -R<CR>
+" --c++-kinds=+p  : Adds prototypes in the database for C/C++ files.
+"--fields=+iaS   : Adds inheritance (i), access (a) and function
+"                  signatures (S) information.
+"--extra=+q      : Adds context to the tag name. Note: Without this
+"                  option, the script cannot get class members.
+nmap<leader>tg :!ctags -R --fields=+aS --extra=+q<CR>
 
 " 使用NERDTree插件查看工程文件。设置快捷键
 nnoremap <silent> <Leader>n  :NERDTreeToggle <CR> 
@@ -198,11 +203,6 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
-" Smart way to move between windows
-" map <C-j> <C-W>j
-" map <C-k> <C-W>k
-" map <C-h> <C-W>h
-" map <C-l> <C-W>l
 
 set ruler           " 显示标尺"
 autocmd InsertEnter * se cul    " 用浅色高亮当前行"
@@ -222,10 +222,10 @@ syntax on
 " 使用ctrlc, v就可以实现vim之间的复制粘贴
 vnoremap <C-c> :w! ~/tmp/clipboard.txt <CR>
 inoremap <C-v> <Esc>:r ~/tmp/clipboard.txt <CR>
-" 将 Vim 设置为粘贴模式后再进行粘贴
-autocmd filetype python nnoremap <F4> :w <bar> exec '!python '.shellescape('%')<CR>
-autocmd filetype c nnoremap <F4> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
-autocmd filetype cpp nnoremap <F4> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+" 编译快捷键
+autocmd filetype python nnoremap <F1> :w <bar> exec '!python '.shellescape('%')<CR>
+autocmd filetype c nnoremap <F1> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd filetype cpp nnoremap <F1> :w <bar> exec '!g++ --std=c++11 -pthread '.shellescape('%').' -o ./bin/'.shellescape('%:r').' && ./bin/'.shellescape('%:r')<CR>
 " set t_Co=256
 " set guifont=Consolas:h13
 " autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -262,3 +262,18 @@ colorscheme Monokai_Gavin
 " test
 " 自动已当前文件为根目录
 set autochdir
+" 需要在哪个目录有类函数补全功能，就加载哪个目录的tags
+" set tags+=/Users/sunxiuyang/Documents/workplace/test/TechCode/CPP/tags
+set completeopt=menu,menuone  
+let OmniCpp_MayCompleteDot=1    "  打开  . 操作符
+let OmniCpp_MayCompleteArrow=1  " 打开 -> 操作符
+let OmniCpp_MayCompleteScope=1  " 打开 :: 操作符
+let OmniCpp_NamespaceSearch=1   " 打开命名空间
+let OmniCpp_GlobalScopeSearch=1  
+let OmniCpp_DefaultNamespace=["std"]  
+let OmniCpp_ShowPrototypeInAbbr=1  " 打开显示函数原型
+let OmniCpp_SelectFirstItem = 2 " 自动弹出时自动跳至第一个
+
+" 添加自动补全php字典
+au FileType php setlocal dict+=~/.vim/dictionary/php_keywords_list.txt
+au FileType cpp setlocal dict+=~/.vim/dictionary/cpp_keywords_list.txt

@@ -28,6 +28,7 @@ tabc    // Close tab
 ;2      // Move cursor to end of line 
 ;a      // Switch between source files and header files quickly, suport for C, C++
 
+F1      // compile cpp code, and make sure there is a diretory named "bin" in current directory.
 // It is useful when you have serval window because of tagbar or neadtree or split the window
 ;h/l/k/j      // move to the left/right/top/bottom window accordingly
 ```

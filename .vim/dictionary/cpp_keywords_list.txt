@@ -19,7 +19,7 @@ default			inline		static				void
 delete			int			static_cast			volatile
 do				long		struct				wchar_t
 double			mutable		switch				while
-dynamic_cast	namespace	template		
+dynamic_cast	namespace	template            include		
 
 CPP STL keywords
 syntax keyword cppSTLconstant badbit

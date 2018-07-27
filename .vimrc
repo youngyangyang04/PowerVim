@@ -130,6 +130,8 @@ let NERDTreeIgnore=['\.vim$', '\~$', '\.o$', '\.d$', '\.a$', '\.out$', '\.tgz$']
 
 " 使用TlistToggle查看文件函数列表。设置快捷键：<F12>
 nnoremap  <Leader>m  :TlistToggle <CR> 
+" 粘贴到系统剪切板
+map <Leader>y "*y
 "禁止自动改变当前Vim窗口的大小
 let Tlist_Inc_Winwidth=0
 "把方法列表放在屏幕的右侧
@@ -260,7 +262,7 @@ endfunc
 " 使用的背景主题
 colorscheme Monokai_Gavin
 " test
-" 自动已当前文件为根目录
+" 自动已当前文件为根目录，可能会影响使用:Vex的，我在mac是ok的，但是在centos下:Vex功能错乱了
 set autochdir
 " 需要在哪个目录有类函数补全功能，就加载哪个目录的tags
 " set tags+=/Users/sunxiuyang/Documents/workplace/test/TechCode/CPP/tags

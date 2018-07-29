@@ -18,7 +18,18 @@ cd PowerVim
 ssh install.sh
 ```
 # Feature
-CPP and PHP code completion and you can add code lib for any language completion
+* CPP and PHP code completion and you can add code lib for any language completion
+* Taglist for functuon and variables list
+* MiniBufList shows the files opened
+* Vim syntax highlighting for C++ (including C++11), go, php, html, json and markdown
+* Shows a git diff in the 'gutter' (sign column).  It shows which lines have been added, modified, or removed.
+* Provides an overview of the structure of the programming language files
+* Automatically opens popup menu for completions when you enter characters or move the cursor in Insert mode
+* Comment stuff out.  Use `gcc` to comment out a line (takes a count), `gc` to comment out the target of a motion
+* Visually browse complex directory hierarchies, quickly open files for reading or editing, and perform basic file system operations.
+* Search with ack from within Vim and shows the results in a split window
+* Beautiful statusline
+
 # Usage
 PowerVim shortcuts start with ;
 Shortcuts is designed for mac Keyboard, more convenient and comfortable. Of course normal Keyboard can also use it Conveniently.
@@ -55,4 +66,5 @@ F1              // Compile cpp code, and make sure there is a diretory named "bi
 ```
 # Configuration
 Every one can change this config to make PowerVim for youself
-Code completion config way
+* Change shortcuts by modifying .vimrc 
+* You can add language completion by puting language keyword list file in .vim/dictionary, and modify .vimrc

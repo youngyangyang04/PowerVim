@@ -1,5 +1,5 @@
 # PowerVim
-Make your vim more power and much easer.
+Make your vim more power and much easer.        
 ```bash
   _____                    __      ___           
   |  __ \                   \ \    / (_)          
@@ -15,21 +15,22 @@ cd PowerVim
 ssh install.sh
 ```
 # Operation
-```bash
+Shortcuts is designed for mac Keyboard, more convenient and comfortable. Of course normal Keyboard can also use it Conveniently.
+```
 Normal Status Keyboard Shortcuts
-;w      // Save file
-e       // Delete word under cursor
-tabc    // Close tab 
-;gt     // Jump to the definition of the keyword where the cursor is located, but make sure you have make ctags
-;gt     // Go back for ";gt"
-;u      // Up half screen
-;d      // Down half screen
-;1      // Move cursor to head of line 
-;2      // Move cursor to end of line 
-;a      // Switch between source files and header files quickly, suport for C, C++
+;w              // Save file
+e               // Delete word under cursor
+tabc            // Close tab 
+;gt             // Jump to the definition of the keyword where the cursor is located, but make sure you have make ctags
+;gt             // Go back for ";gt"
+;u              // Up half screen
+;d              // Down half screen
+;1              // Move cursor to head of line 
+;2              // Move cursor to end of line 
+;a              // Switch between source files and header files quickly, suport for C, C++
 
-F1      // compile cpp code, and make sure there is a diretory named "bin" in current directory.
+F1              // compile cpp code, and make sure there is a diretory named "bin" in current directory.
 // It is useful when you have serval window because of tagbar or neadtree or split the window
-;h/l/k/j      // move to the left/right/top/bottom window accordingly
+;h/l/k/j        // move to the left/right/top/bottom window accordingly
 ```
 

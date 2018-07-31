@@ -51,13 +51,12 @@ Normal Status Keyboard Shortcuts
 ;ff             // Search filename around the project
 ;gt             // Jump to the definition of the keyword where the cursor is located, but make sure you have make ctags
 ;gr             // Go back for ";gt"
-
+;tg             // Take tags file, make sure already install ctags
+;y              // Copy content which selected by v to system clipboard
+dsfa;w
 // It is useful when you have serval window because of tagbar or neadtree or split the window
 ;h/l/k/j        // Move to the left/right/top/bottom window accordingly
 ;gg             // Traverse window
-
-;tg             // Take tags file, make sure already install ctags
-;y              // Copy content which selected by v to system clipboard
 
 // Shortcuts without ;
 e               // Delete word under cursor

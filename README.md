@@ -18,7 +18,7 @@ cd PowerVim
 ssh install.sh
 ```
 # Feature
-* CPP and PHP code completion and you can add code lib for any language completion
+* CPP and PHP code completion and you can add code keyword list for any language completion
 * Taglist for functuon and variables list
 * MiniBufList shows the files opened
 * Vim syntax highlighting for C++ (including C++11), go, php, html, json and markdown
@@ -62,8 +62,28 @@ dsfa;w
 e               // Delete word under cursor
 tabc            // Close tab, of course you should :tabnew a file first. 
 F1              // Compile cpp code, and make sure there is a diretory named "bin" in current directory.
+gc              // Comment out the target of a motion
+gcc             // Comment out a line (takes a count)
 ```
+# Plugins
+* a.vim [https://github.com/vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)
+* minibufexpl.vim [https://github.com/fholgado/minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim)
+* statusline.vim [https://github.com/youngyangyang04/PowerVim/blob/master/.vim/plugin/statusline.vim](https://github.com/youngyangyang04/PowerVim/blob/master/.vim/plugin/statusline.vim)
+* taglist.vim [https://github.com/vim-scripts/taglist.vim](https://github.com/vim-scripts/taglist.vim)
+* ack [https://github.com/mileszs/ack.vim](https://github.com/mileszs/ack.vim)
+* autocomplpop [https://github.com/vim-scripts/AutoComplPop](https://github.com/vim-scripts/AutoComplPop)
+* commentary [https://github.com/tpope/vim-commentary](https://github.com/tpope/vim-commentary)
+* nerdtree [https://github.com/scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) 
+* vim-gitgutter [https://github.com/airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+
 # Configuration
 Every one can change this config to make PowerVim for youself
 * Change shortcuts by modifying .vimrc 
 * You can add language completion by puting language keyword list file in .vim/dictionary, and modify .vimrc
+
+# FAQ
+PowerVim do not install youcompleteme to perfect code completion
+* PowerVim basic code completion is enough
+* Installing youcompleteme is complicated and is not almost universal, one install successfully do not mean other people can install it successfully in same operation method.
+* Open vim will be slow. Because youcompleteme is to large, it load bin file and analyze syntax.
+* PowerVim will try it latter, if it is easy to install and use.

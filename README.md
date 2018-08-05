@@ -34,7 +34,7 @@ ssh install.sh
 PowerVim shortcuts start with ;
 Shortcuts is designed for mac Keyboard, more convenient and comfortable. Of course normal Keyboard can also use it Conveniently.
 ```
-Normal Status Keyboard Shortcuts
+Normal Model Keyboard Shortcuts
 ;n              // Open directory tree
 ;m              // Open file function and variables list
 ;w              // Save file
@@ -64,6 +64,8 @@ tabc            // Close tab, of course you should :tabnew a file first.
 F1              // Compile cpp code, and make sure there is a diretory named "bin" in current directory.
 gc              // Comment out the target of a motion
 gcc             // Comment out a line (takes a count)
+{               // Up block of code 
+}               // Down block of code
 ```
 # Plugins
 * a.vim [https://github.com/vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)

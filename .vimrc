@@ -6,10 +6,6 @@ execute pathogen#infect()
 " syntax on
 filetype plugin indent on
 
-" ack搜索时不打开第一个搜索文件
-map <Leader>fw :Ack!<Space>
-" AckFile不打开第一个搜索文件
-map <Leader>ff :AckFile!<Space>
 
 "高亮搜索关键词"
 let g:ackhighlight = 1
@@ -58,10 +54,15 @@ let curpwd = getcwd()
 set wildmenu
 
 " 禁止光标闪烁
-set gcr=a:block-blinkon0
+" set gcr=a:block-blinkon0
+
+" ack搜索时不打开第一个搜索文件
+map <Leader>fw :Ack!<Space>
+" AckFile不打开第一个搜索文件
+map <Leader>ff :AckFile!<Space>
 
 " 定义快捷键 关闭当前分割窗口
-" nmap <Leader>q :q<CR>
+nmap <Leader>q :q<CR>
 " 定义快捷键
 nmap <Leader>w :w<CR>
 " 删除光标所在单词
@@ -99,8 +100,6 @@ nnoremap <leader>l <C-W><C-L>
 nnoremap <Leader>k <C-W><C-K>
 " 向下
 nnoremap <Leader>j <C-W><C-J>
-" 切换到shell，vim在后台运行
-nmap <Leader>gs :shell<CR>
 " 去除高亮
 "nmap <Leader>h :noh<CR>
 " 打开文件
@@ -112,7 +111,7 @@ nmap <Leader>s :Sex<CR>
 " 竖直分隔
 nmap <Leader>v :Vex<CR>
 " 全局替换
-nmap <Leader>r :%s/[fileName-]/[fileName+]/g
+nmap <Leader>r :%s/fileName-/fileName+/g
 " 打tag
 " --c++-kinds=+p  : Adds prototypes in the database for C/C++ files.
 "--fields=+iaS   : Adds inheritance (i), access (a) and function
@@ -265,7 +264,7 @@ colorscheme Monokai_Gavin
 " 自动已当前文件为根目录，可能会影响使用:Vex的，我在mac是ok的，但是在centos下:Vex功能错乱了
 set autochdir
 " 需要在哪个目录有类函数补全功能，就加载哪个目录的tags
-" set tags+=/Users/sunxiuyang/Documents/workplace/test/TechCode/CPP/tags
+set tags+=/Users/sunxiuyang/Documents/workplace/brpc/tags
 set completeopt=menu,menuone  
 let OmniCpp_MayCompleteDot=1    "  打开  . 操作符
 let OmniCpp_MayCompleteArrow=1  " 打开 -> 操作符
@@ -279,3 +278,5 @@ let OmniCpp_SelectFirstItem = 2 " 自动弹出时自动跳至第一个
 " 添加自动补全php字典
 au FileType php setlocal dict+=~/.vim/dictionary/php_keywords_list.txt
 au FileType cpp setlocal dict+=~/.vim/dictionary/cpp_keywords_list.txt
+autocmd BufRead scp://* :set bt=acwrite
+" au FileType * setlocal dict+=~/.vim/dictionary/words.txt

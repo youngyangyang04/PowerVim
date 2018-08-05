@@ -65,7 +65,7 @@ gcc             // 快速当前行
 {               // 光标向上移动一个代码块
 }               // 光标向下移动一个代码块
 ```
-# Plugins
+# 插件
 * a.vim [https://github.com/vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)
 * minibufexpl.vim [https://github.com/fholgado/minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim)
 * statusline.vim [https://github.com/youngyangyang04/PowerVim/blob/master/.vim/plugin/statusline.vim](https://github.com/youngyangyang04/PowerVim/blob/master/.vim/plugin/statusline.vim)
@@ -76,14 +76,14 @@ gcc             // 快速当前行
 * nerdtree [https://github.com/scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) 
 * vim-gitgutter [https://github.com/airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 
-# Configuration
+# 配置
 每个人都可以在这个基础上进行修改，改成一个属于自己的PowerVim
 * 改变快捷键的方式在.vimrc
 * 可以添加支持代码补全的语言，你可以在.vim/dictionary文件下添加该编程语言的补全关键字文本，并且在.vimrc上添加一下dict
 
-# FAQ
+# 疑问解答
 PowerVim没有安装youcompleteme来完善代码补全，主要有以下方面
 * PowerVim已经有很好的代码补全，足够开发使用 
 * 安装youcompleteme比较麻烦，而且不通用，作者安装成功，用户按照一样的步骤安装并不一定成功 
 * 安装youcompleteme后，vim会变得比较慢 
-* PowerVim 后面也会尝试加上youcompleteme，争取可以让这个插件可以简单的被安装 
+* PowerVim 后面也会尝试加上youcompleteme，可以让这个插件可以简单的被安装 

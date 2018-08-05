@@ -1,3 +1,4 @@
+# [中文说明](https://github.com/youngyangyang04/PowerVim/blob/master/docs/README-zh.md)
 # PowerVim
 Make your vim more power and much easer.        
 ```

@@ -9,6 +9,11 @@ Make your vim more power and much easer.
   | |  | (_) \ V  V /  __/ |   \  /  | | | | | | | 
   |_|   \___/ \_/\_/ \___|_|    \/   |_|_| |_| |_|
 ```
+# Why PowerVim?
+* Highly customizble
+* Runs everywhere
+* Works with many programming language
+* Scriptable
 # Overview
 ![conv_ops](https://github.com/youngyangyang04/Documents/blob/master/vim/vim_overview.gif)
 
@@ -67,6 +72,18 @@ gc              // Comment out the target of a motion
 gcc             // Comment out a line (takes a count)
 {               // Up block of code 
 }               // Down block of code
+
+// vim inside Shortcuts 
+ctrl e          // scroll the window down 
+ctrl y          // scroll the window up 
+ctrl f          // scroll down one page
+ctrl b          // scroll up one page
+H               // move cursor to the top of the window
+M               // move cursor to the middle of the window 
+L               // move cursor to the bottom of the window
+G               // go to bottom of file
+gg              // go to top of file 
+select block in Visual model, :'<,'>s/oldName/newName/g
 ```
 # Plugins
 * a.vim [https://github.com/vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)

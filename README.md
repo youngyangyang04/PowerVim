@@ -74,15 +74,17 @@ gcc             // Comment out a line (takes a count)
 }               // Down block of code
 
 // vim inside Shortcuts 
-ctrl e          // scroll the window down 
-ctrl y          // scroll the window up 
-ctrl f          // scroll down one page
-ctrl b          // scroll up one page
-H               // move cursor to the top of the window
-M               // move cursor to the middle of the window 
-L               // move cursor to the bottom of the window
-G               // go to bottom of file
-gg              // go to top of file 
+ctrl e          // Scroll the window down 
+ctrl y          // Scroll the window up 
+ctrl f          // Scroll down one page
+ctrl b          // Scroll up one page
+ctrl d          // Scroll down half of page
+ctrl u          // Scroll up half of page
+H               // Move cursor to the top of the window
+M               // Move cursor to the middle of the window 
+L               // Move cursor to the bottom of the window
+G               // Go to bottom of file
+gg              // Go to top of file 
 select block in Visual model, :'<,'>s/oldName/newName/g
 ```
 # Plugins
@@ -107,3 +109,7 @@ PowerVim do not install youcompleteme to perfect code completion
 * Installing youcompleteme is complicated and is not almost universal, one install successfully do not mean other people can install it successfully in same operation method.
 * Open vim will be slow. Because youcompleteme is to large, it load bin file and analyze syntax.
 * PowerVim will try it latter, if it is easy to install and use.
+
+# points for improvements
+* Check whether ctags are installed when installing PowerVim
+* Check directory bin when Compiling CPP

@@ -72,21 +72,8 @@ gc              // Comment out the target of a motion
 gcc             // Comment out a line (takes a count)
 {               // Up block of code 
 }               // Down block of code
-
-// vim inside Shortcuts 
-ctrl e          // Scroll the window down 
-ctrl y          // Scroll the window up 
-ctrl f          // Scroll down one page
-ctrl b          // Scroll up one page
-ctrl d          // Scroll down half of page
-ctrl u          // Scroll up half of page
-H               // Move cursor to the top of the window
-M               // Move cursor to the middle of the window 
-L               // Move cursor to the bottom of the window
-G               // Go to bottom of file
-gg              // Go to top of file 
-select block in Visual model, :'<,'>s/oldName/newName/g
 ```
+
 # Plugins
 * a.vim [https://github.com/vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)
 * minibufexpl.vim [https://github.com/fholgado/minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim)
@@ -113,3 +100,30 @@ PowerVim do not install youcompleteme to perfect code completion
 # points for improvements
 * Check whether ctags are installed when installing PowerVim
 * Check directory bin when Compiling CPP
+
+# Vim inside Shortcuts
+## Easy shortcuts
+``` 
+ctrl e          // Scroll the window down 
+ctrl y          // Scroll the window up 
+ctrl f          // Scroll down one page
+ctrl b          // Scroll up one page
+ctrl d          // Scroll down half of page
+ctrl u          // Scroll up half of page
+H               // Move cursor to the top of the window
+M               // Move cursor to the middle of the window 
+L               // Move cursor to the bottom of the window
+G               // Go to bottom of file
+gg              // Go to top of file 
+```
+
+## Complicated shortcuts
+Comment quickly
+* First, go to the first line you want to comment, press CtrlV. This will put the editor in the VISUAL BLOCK mode.
+* Then using the arrow key and select until the last line
+* Now press ShiftI, which will put the editor in INSERT mode and then press #. This will add a hash to the first line.
+* Then press Esc (give it a second), and it will insert a # character on all other selected lines.
+
+Relace oldName to newName in Visual model selected 
+* select block in Visual model, then press :,  :'<,'>s/oldName/newName/g
+

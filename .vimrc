@@ -119,7 +119,8 @@ nmap <Leader>r :%s/fileName-/fileName+/g
 "--extra=+q      : Adds context to the tag name. Note: Without this
 "                  option, the script cannot get class members.
 nmap<leader>tg :!ctags -R --fields=+aS --extra=+q<CR>
-
+" java jdk 补全
+map! <C-O> <C-X><C-O>
 " 使用NERDTree插件查看工程文件。设置快捷键
 nnoremap <silent> <Leader>n  :NERDTreeToggle <CR> 
 " 设置NERDTree子窗口位置
@@ -227,9 +228,19 @@ inoremap <C-v> <Esc>:r ~/tmp/clipboard.txt <CR>
 autocmd filetype python nnoremap <F1> :w <bar> exec '!python '.shellescape('%')<CR>
 autocmd filetype c nnoremap <F1> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 autocmd filetype cpp nnoremap <F1> :w <bar> exec '!g++ --std=c++11 -pthread '.shellescape('%').' -o ./bin/'.shellescape('%:r').' && ./bin/'.shellescape('%:r')<CR>
-" set t_Co=256
-" set guifont=Consolas:h13
-" autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd Filetype java nnoremap <F1> :w <bar> exec '!javac '.shellescape('%'). ' -d ./bin'<CR>
+autocmd filetype java nnoremap <F2> :w <bar> exec '!java -cp ./bin '.shellescape('%:r')<CR>
+" . ' -d ./bin  && !java '.shellescape('%:r')
+" autocmd Filetype java set makeprg=javac\ %
+" set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+" map <F1> :make<Return>:copen<Return>
+" map <F2> :cprevious<Return>
+" map <F3> :cnext<Return>
+
+" run class
+" func! RunClass()
+" 	:!java -cp "%:p:h" "%:t:r"
+" endfunc
 let g:tlist_markdown_settings = 'markdown;h:Headlins'
 "新建.c,.h,.sh,.Java文件，自动插入文件头
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.Java,*.go exec ":call SetTitle()"
@@ -246,7 +257,7 @@ func SetTitle()
         call append(line(".")+5, "\#!/bin/bash")
         call append(line(".")+6, "")
     else
-        call setline(1, "/*************************************************************************")
+        call setline(1, "/* ************************************************************************")
         call append(line("."),   "> File Name:     ".expand("%"))
         call append(line(".")+1, "> Author:        sunxiuyang")
         call append(line(".")+2, "> Mail:          sunxiuyang04@gmail.com ")
@@ -260,6 +271,12 @@ func SetTitle()
 endfunc
 " 使用的背景主题
 colorscheme Monokai_Gavin
+" 添加自动补全字典
+au FileType php setlocal dict+=~/.vim/dictionary/php_keywords_list.txt
+au FileType cpp setlocal dict+=~/.vim/dictionary/cpp_keywords_list.txt
+au FileType java setlocal dict+=~/.vim/dictionary/java_keywords_list.txt
+au FileType markdown setlocal dict+=~/.vim/dictionary/words.txt
+
 " test
 " 自动已当前文件为根目录，可能会影响使用:Vex的，我在mac是ok的，但是在centos下:Vex功能错乱了
 set autochdir
@@ -274,9 +291,24 @@ let OmniCpp_GlobalScopeSearch=1
 let OmniCpp_DefaultNamespace=["std"]  
 let OmniCpp_ShowPrototypeInAbbr=1  " 打开显示函数原型
 let OmniCpp_SelectFirstItem = 2 " 自动弹出时自动跳至第一个
-
-" 添加自动补全php字典
-au FileType php setlocal dict+=~/.vim/dictionary/php_keywords_list.txt
-au FileType cpp setlocal dict+=~/.vim/dictionary/cpp_keywords_list.txt
 autocmd BufRead scp://* :set bt=acwrite
 " au FileType * setlocal dict+=~/.vim/dictionary/words.txt
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+let g:JavaComplete_JavaCompiler="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/bin/javac"
+nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+
+" for vim-syntastic 
+" disabled Syntastic by default 
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+nnoremap <Leader>l :SyntasticToggleMode<CR> :w<CR>
+
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

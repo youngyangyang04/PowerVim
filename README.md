@@ -97,7 +97,7 @@ PowerVim do not install youcompleteme to perfect code completion
 * Open vim will be slow. Because youcompleteme is to large, it load bin file and analyze syntax.
 * PowerVim will try it latter, if it is easy to install and use.
 
-# points for improvements
+# Todo
 * Check whether ctags are installed when installing PowerVim
 * Check directory bin when Compiling CPP
 
@@ -115,6 +115,8 @@ M               // Move cursor to the middle of the window
 L               // Move cursor to the bottom of the window
 G               // Go to bottom of file
 gg              // Go to top of file 
+:echo           // Print variables in vim 
+:call           // Call vimshell function
 ```
 
 ## Complicated shortcuts

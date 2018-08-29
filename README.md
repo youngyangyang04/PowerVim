@@ -24,7 +24,7 @@ cd PowerVim
 ssh install.sh
 ```
 # Feature
-* CPP and PHP code completion and you can add code keyword list for any language completion
+* CPP/PHP/JAVA code completion and you can add code keyword list for any language completion
 * Taglist for functuon and variables list
 * MiniBufList shows the files opened
 * Vim syntax highlighting for C++ (including C++11), go, php, html, json and markdown
@@ -34,6 +34,7 @@ ssh install.sh
 * Comment stuff out.  Use `gcc` to comment out a line (takes a count), `gc` to comment out the target of a motion
 * Visually browse complex directory hierarchies, quickly open files for reading or editing, and perform basic file system operations.
 * Search with ack from within Vim and shows the results in a split window
+* Syntastic checker for almost every programming language
 * Beautiful statusline
 
 # Usage
@@ -59,6 +60,7 @@ Normal Model Keyboard Shortcuts
 ;gr             // Go back for ";gt"
 ;tg             // Take tags file, make sure already install ctags
 ;y              // Copy content which selected by v to system clipboard
+;l              // Enable syntastic checker
 dsfa;w
 // It is useful when you have serval window because of tagbar or neadtree or split the window
 ;h/l/k/j        // Move to the left/right/top/bottom window accordingly

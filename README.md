@@ -60,7 +60,7 @@ Normal Model Keyboard Shortcuts
 ;gr             // Go back for ";gt"
 ;tg             // Take tags file, make sure already install ctags
 ;y              // Copy content which selected by v to system clipboard
-;l              // Enable syntastic checker
+;o              // Enable syntastic checker
 dsfa;w
 // It is useful when you have serval window because of tagbar or neadtree or split the window
 ;h/l/k/j        // Move to the left/right/top/bottom window accordingly
@@ -106,6 +106,11 @@ PowerVim do not install youcompleteme to perfect code completion
 # Vim inside Shortcuts
 ## Easy shortcuts
 ``` 
+u               // Undo
+ctrl r          // Cancel undo
+>>              // Right Indent
+<<              // Left Indent
+:noh            // Cancel highlight
 ctrl e          // Scroll the window down 
 ctrl y          // Scroll the window up 
 ctrl f          // Scroll down one page
@@ -119,6 +124,7 @@ G               // Go to bottom of file
 gg              // Go to top of file 
 :echo           // Print variables in vim 
 :call           // Call vimshell function
+:%!xxd          // View the assembly code for this file 
 ```
 
 ## Complicated shortcuts
@@ -131,3 +137,9 @@ Comment quickly
 Relace oldName to newName in Visual model selected 
 * select block in Visual model, then press :,  :'<,'>s/oldName/newName/g
 
+## Neadtree
+
+```
+C               // The root directory is the directory where the cursor is currently located 
+go              // Previews the file where the cursor is, and the cursor does not jump to the file 
+```

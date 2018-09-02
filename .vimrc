@@ -184,8 +184,8 @@ endif
 
 
 "花括号自动格式化，首行一个tab
-inoremap { {<CR>}<ESC>kA<CR>
-inoremap { {<CR>}<ESC>kA<CR>
+autocmd FileType cpp,java inoremap { {<CR>}<ESC>kA<CR>
+
 set fenc=" "
 "显示匹配
 set showmatch
@@ -225,22 +225,11 @@ syntax on
 vnoremap <C-c> :w! ~/tmp/clipboard.txt <CR>
 inoremap <C-v> <Esc>:r ~/tmp/clipboard.txt <CR>
 " 编译快捷键
-autocmd filetype python nnoremap <F1> :w <bar> exec '!python '.shellescape('%')<CR>
-autocmd filetype c nnoremap <F1> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd filetype python nnoremap <F1> :w <bar> exec '!python '.shellescape('%')<CR> autocmd filetype c nnoremap <F1> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 autocmd filetype cpp nnoremap <F1> :w <bar> exec '!g++ --std=c++11 -pthread '.shellescape('%').' -o ./bin/'.shellescape('%:r').' && ./bin/'.shellescape('%:r')<CR>
 autocmd Filetype java nnoremap <F1> :w <bar> exec '!javac '.shellescape('%'). ' -d ./bin'<CR>
 autocmd filetype java nnoremap <F2> :w <bar> exec '!java -cp ./bin '.shellescape('%:r')<CR>
-" . ' -d ./bin  && !java '.shellescape('%:r')
-" autocmd Filetype java set makeprg=javac\ %
-" set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
-" map <F1> :make<Return>:copen<Return>
-" map <F2> :cprevious<Return>
-" map <F3> :cnext<Return>
 
-" run class
-" func! RunClass()
-" 	:!java -cp "%:p:h" "%:t:r"
-" endfunc
 let g:tlist_markdown_settings = 'markdown;h:Headlins'
 "新建.c,.h,.sh,.Java文件，自动插入文件头
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.Java,*.go exec ":call SetTitle()"
@@ -277,6 +266,22 @@ au FileType cpp setlocal dict+=~/.vim/dictionary/cpp_keywords_list.txt
 au FileType java setlocal dict+=~/.vim/dictionary/java_keywords_list.txt
 au FileType markdown setlocal dict+=~/.vim/dictionary/words.txt
 
+" for vim-syntastic 
+" disabled Syntastic by default 
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+" open/close Syntastic checker
+nnoremap <Leader>o :SyntasticToggleMode<CR> :w<CR>
+" set vim-syntastic compiler 
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " test
 " 自动已当前文件为根目录，可能会影响使用:Vex的，我在mac是ok的，但是在centos下:Vex功能错乱了
 set autochdir
@@ -297,18 +302,3 @@ autocmd FileType java setlocal omnifunc=javacomplete#Complete
 let g:JavaComplete_JavaCompiler="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/bin/javac"
 nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
 
-" for vim-syntastic 
-" disabled Syntastic by default 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-nnoremap <Leader>l :SyntasticToggleMode<CR> :w<CR>
-
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0

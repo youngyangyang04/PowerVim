@@ -61,6 +61,8 @@ Normal Model Keyboard Shortcuts
 ;tg             // Take tags file, make sure already install ctags
 ;y              // Copy content which selected by v to system clipboard
 ;o              // Enable syntastic checker
+;t              // Align with symbol, for example: ":Tab /|"  
+;ja             // Add setter and getter for jave class 
 dsfa;w
 // It is useful when you have serval window because of tagbar or neadtree or split the window
 ;h/l/k/j        // Move to the left/right/top/bottom window accordingly
@@ -77,15 +79,18 @@ gcc             // Comment out a line (takes a count)
 ```
 
 # Plugins
-* a.vim [https://github.com/vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)
-* minibufexpl.vim [https://github.com/fholgado/minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim)
-* statusline.vim [https://github.com/youngyangyang04/PowerVim/blob/master/.vim/plugin/statusline.vim](https://github.com/youngyangyang04/PowerVim/blob/master/.vim/plugin/statusline.vim)
-* taglist.vim [https://github.com/vim-scripts/taglist.vim](https://github.com/vim-scripts/taglist.vim)
-* ack [https://github.com/mileszs/ack.vim](https://github.com/mileszs/ack.vim)
-* autocomplpop [https://github.com/vim-scripts/AutoComplPop](https://github.com/vim-scripts/AutoComplPop)
-* commentary [https://github.com/tpope/vim-commentary](https://github.com/tpope/vim-commentary)
-* nerdtree [https://github.com/scrooloose/nerdtree](https://github.com/scrooloose/nerdtree) 
-* vim-gitgutter [https://github.com/airblade/vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [a.vim](https://github.com/vim-scripts/a.vim)
+* [minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim)
+* [statusline.vim](https://github.com/youngyangyang04/PowerVim/blob/master/.vim/plugin/statusline.vim)
+* [taglist.vim](https://github.com/vim-scripts/taglist.vim)
+* [ack](https://github.com/mileszs/ack.vim)
+* [autocomplpop](https://github.com/vim-scripts/AutoComplPop)
+* [commentary](https://github.com/tpope/vim-commentary)
+* [nerdtree](https://github.com/scrooloose/nerdtree) 
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [Tabular](https://github.com/godlygeek/tabular)
+* [vim-syntastic](https://github.com/vim-syntastic/syntastic)
+* [vim-javacomplete2](https://github.com/artur-shaik/vim-javacomplete2)
 
 # Configuration
 Every one can change this config to make PowerVim for youself
@@ -125,6 +130,7 @@ gg              // Go to top of file
 :echo           // Print variables in vim 
 :call           // Call vimshell function
 :%!xxd          // View the assembly code for this file 
+:scriptnames    // List all plugin files loaded
 ```
 
 ## Complicated shortcuts
@@ -142,4 +148,7 @@ Relace oldName to newName in Visual model selected
 ```
 C               // The root directory is the directory where the cursor is currently located 
 go              // Previews the file where the cursor is, and the cursor does not jump to the file 
+m               // Open a menu below and you can select from a list of actions, such as create file, delete file, copy file and soon  
+r               // Refresh 
 ```
+

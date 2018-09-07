@@ -112,6 +112,8 @@ nmap <Leader>s :Sex<CR>
 nmap <Leader>v :Vex<CR>
 " 全局替换
 nmap <Leader>r :%s/fileName-/fileName+/g
+" align
+nmap <Leader>t :Tab /
 " 打tag
 " --c++-kinds=+p  : Adds prototypes in the database for C/C++ files.
 "--fields=+iaS   : Adds inheritance (i), access (a) and function
@@ -270,7 +272,7 @@ au FileType markdown setlocal dict+=~/.vim/dictionary/words.txt
 " disabled Syntastic by default 
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 " open/close Syntastic checker
-nnoremap <Leader>o :SyntasticToggleMode<CR> :w<CR>
+nnoremap <Leader>p :SyntasticToggleMode<CR> :w<CR>
 " set vim-syntastic compiler 
 let g:syntastic_cpp_compiler = 'g++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
@@ -300,5 +302,10 @@ autocmd BufRead scp://* :set bt=acwrite
 " au FileType * setlocal dict+=~/.vim/dictionary/words.txt
 autocmd FileType java setlocal omnifunc=javacomplete#Complete
 let g:JavaComplete_JavaCompiler="/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/bin/javac"
+" for JavaComplete
 nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
+nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
+nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
+nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 
+nmap <Leader>o o<Esc>

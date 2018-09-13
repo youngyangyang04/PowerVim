@@ -40,6 +40,7 @@ ssh install.sh
 # Usage
 PowerVim shortcuts start with ;
 Shortcuts is designed for mac Keyboard, more convenient and comfortable. Of course normal Keyboard can also use it Conveniently.
+
 ```
 Normal Model Keyboard Shortcuts
 ;n              // Open directory tree
@@ -79,6 +80,7 @@ gcc             // Comment out a line (takes a count)
 ```
 
 # Plugins
+
 * [a.vim](https://github.com/vim-scripts/a.vim)
 * [minibufexpl.vim](https://github.com/fholgado/minibufexpl.vim)
 * [statusline.vim](https://github.com/youngyangyang04/PowerVim/blob/master/.vim/plugin/statusline.vim)
@@ -93,23 +95,29 @@ gcc             // Comment out a line (takes a count)
 * [vim-javacomplete2](https://github.com/artur-shaik/vim-javacomplete2)
 
 # Configuration
+
 Every one can change this config to make PowerVim for youself
+
 * Change shortcuts by modifying .vimrc 
 * You can add language completion by puting language keyword list file in .vim/dictionary, and modify .vimrc
 
 # FAQ
+
 PowerVim do not install youcompleteme to perfect code completion
+
 * PowerVim basic code completion is enough
 * Installing youcompleteme is complicated and is not almost universal, one install successfully do not mean other people can install it successfully in same operation method.
 * Open vim will be slow. Because youcompleteme is to large, it load bin file and analyze syntax.
 * PowerVim will try it latter, if it is easy to install and use.
 
 # Todo
+
 * Check whether ctags are installed when installing PowerVim
 * Check directory bin when Compiling CPP
 
 # Vim inside Shortcuts
 ## Easy shortcuts
+
 ``` 
 u               // Undo
 ctrl r          // Cancel undo
@@ -131,16 +139,20 @@ gg              // Go to top of file
 :call           // Call vimshell function
 :%!xxd          // View the assembly code for this file 
 :scriptnames    // List all plugin files loaded
+:!unix_command  // Run Unix commands inside vim
 ```
 
 ## Complicated shortcuts
+
 Comment quickly
+
 * First, go to the first line you want to comment, press CtrlV. This will put the editor in the VISUAL BLOCK mode.
 * Then using the arrow key and select until the last line
 * Now press ShiftI, which will put the editor in INSERT mode and then press #. This will add a hash to the first line.
 * Then press Esc (give it a second), and it will insert a # character on all other selected lines.
 
 Relace oldName to newName in Visual model selected 
+
 * select block in Visual model, then press :,  :'<,'>s/oldName/newName/g
 
 ## Neadtree

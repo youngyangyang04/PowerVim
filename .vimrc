@@ -139,8 +139,7 @@ let Tlist_Inc_Winwidth=0
 "把方法列表放在屏幕的右侧
 let Tlist_Use_Right_Window=1
 "让当前不被编辑的文件的方法列表自动折叠起来
-let Tlist_File_Fold_Auto_Close=1
-
+let Tlist_File_Fold_Auto_Close=1 
 " let g:winManagerWindowLayout='FileExplorer'
 " 定义快捷键 打开/关闭 winmanger
 " nmap wm :WMToggle<cr>
@@ -266,7 +265,7 @@ colorscheme Monokai_Gavin
 au FileType php setlocal dict+=~/.vim/dictionary/php_keywords_list.txt
 au FileType cpp setlocal dict+=~/.vim/dictionary/cpp_keywords_list.txt
 au FileType java setlocal dict+=~/.vim/dictionary/java_keywords_list.txt
-au FileType markdown setlocal dict+=~/.vim/dictionary/words.txt
+" au FileType markdown setlocal dict+=~/.vim/dictionary/words.txt
 
 " for vim-syntastic 
 " disabled Syntastic by default 
@@ -286,8 +285,9 @@ let g:syntastic_check_on_wq = 0
 
 " test
 " 自动已当前文件为根目录，可能会影响使用:Vex的，我在mac是ok的，但是在centos下:Vex功能错乱了
-set autochdir
-" 需要在哪个目录有类函数补全功能，就加载哪个目录的tags
+" set autochdir
+autocmd BufEnter * silent! lcd %:p:h
+" 需要在哪个目录有类函数补全功能，就加载哪个目录的tags 
 set tags+=/Users/sunxiuyang/Documents/workplace/brpc/tags
 set completeopt=menu,menuone  
 let OmniCpp_MayCompleteDot=1    "  打开  . 操作符
@@ -307,5 +307,13 @@ nmap <F4> <Plug>(JavaComplete-Imports-AddSmart)
 nmap <leader>js <Plug>(JavaComplete-Generate-AccessorSetter)
 nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
 nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
-
 nmap <Leader>o o<Esc>
+
+
+" for me
+func MarkdownSet() 
+
+    let filePath=expand('%:p')
+    exe ':!open ' . filePath '-a "MacDown"'
+endfunc
+" nmap md :call MarkdownSet()<CR>

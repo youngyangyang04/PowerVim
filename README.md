@@ -120,6 +120,7 @@ PowerVim do not install youcompleteme to perfect code completion
 
 ``` 
 u               // Undo
+r               // Relace the character under cursor
 ctrl r          // Cancel undo
 >>              // Right Indent
 <<              // Left Indent

@@ -311,9 +311,9 @@ nmap <Leader>o o<Esc>
 
 
 " for me
-func MarkdownSet() 
+" func MarkdownSet() 
 
-    let filePath=expand('%:p')
-    exe ':!open ' . filePath '-a "MacDown"'
-endfunc
+"     let filePath=expand('%:p')
+"     exe ':!open ' . filePath '-a "MacDown"'
+" endfunc
 " nmap md :call MarkdownSet()<CR>

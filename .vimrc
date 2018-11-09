@@ -57,10 +57,9 @@ set wildmenu
 " set gcr=a:block-blinkon0
 
 " ack搜索时不打开第一个搜索文件
-map <Leader>fw :Ack!<Space>
+map <Leader>fw :Ack! <Space>
 " AckFile不打开第一个搜索文件
 map <Leader>ff :AckFile!<Space>
-
 " 定义快捷键 关闭当前分割窗口
 nmap <Leader>q :q<CR>
 " 定义快捷键
@@ -69,8 +68,11 @@ nmap <Leader>w :w<CR>
 nmap e daw
 " close TAB
 nmap tabc :tabc <CR>
+" go to previous table
+map gp :tabp <CR>
 " 定义快捷键 跳转到光标所在关键词的定义处
-nmap <Leader>gt <C-]>
+" here are multiple matches, show me a list of all the matching tags 
+nmap <Leader>gt g<C-]>
 " 定义快捷键 跳回原关键词 与 ;gr 配合使用
 nmap <Leader>gr <C-T>
 " 向下翻半屏
@@ -259,6 +261,33 @@ func SetTitle()
     "新建文件后，自动定位到文件末尾
     autocmd BufNewFile * normal G
 endfunc
+
+
+" shortcut for markdown
+" 创建时间快捷键for markdown
+nmap tm :call SetTime() <CR>
+func SetTime()
+        call append(line("."), "\# ".strftime('%a %d %b %Y'))
+endfunc
+
+nmap tb :call SetTable() <CR>
+func SetTable()
+        call append(line("."), "\| | | ")
+        call append(line(".")+1, "\|---|---|")
+        call append(line(".")+2, "\| | |")
+endfunc
+
+nmap pc :call SetPic() <CR>
+func SetPic()
+        call append(line("."), "\<img src='' width=600> </img></div>")
+endfunc
+
+" vim cc
+nmap cc :call SetCC() <CR>
+func SetCC() 
+    call append(line("."), "// vim: et tw=100 ts=4 sw=4 cc=120")  
+endfunc
+
 " 使用的背景主题
 colorscheme Monokai_Gavin
 " 添加自动补全字典
@@ -289,6 +318,10 @@ let g:syntastic_check_on_wq = 0
 autocmd BufEnter * silent! lcd %:p:h
 " 需要在哪个目录有类函数补全功能，就加载哪个目录的tags 
 set tags+=/Users/sunxiuyang/Documents/workplace/brpc/tags
+
+" complete with no first suggestion 
+:set completeopt+=noinsert
+
 set completeopt=menu,menuone  
 let OmniCpp_MayCompleteDot=1    "  打开  . 操作符
 let OmniCpp_MayCompleteArrow=1  " 打开 -> 操作符
@@ -316,4 +349,3 @@ nmap <Leader>o o<Esc>
 "     let filePath=expand('%:p')
 "     exe ':!open ' . filePath '-a "MacDown"'
 " endfunc
-" nmap md :call MarkdownSet()<CR>

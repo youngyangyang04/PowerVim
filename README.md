@@ -163,5 +163,8 @@ C               // The root directory is the directory where the cursor is curre
 go              // Previews the file where the cursor is, and the cursor does not jump to the file 
 m               // Open a menu below and you can select from a list of actions, such as create file, delete file, copy file and soon  
 r               // Refresh 
+x               // Close the current nodes parent
 ```
+# NOTIFY 
 
+some file is gone, you shuild go origial place to download it.

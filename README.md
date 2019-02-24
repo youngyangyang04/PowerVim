@@ -141,6 +141,9 @@ gg              // Go to top of file
 :%!xxd          // View the assembly code for this file 
 :scriptnames    // List all plugin files loaded
 :!unix_command  // Run Unix commands inside vim
+:pwd            // The present working directory can be displayed in Vim with 
+:cd %:p:h       // To change to the directory of the currently open file
+:reg            // Show register
 ```
 
 ## Complicated shortcuts

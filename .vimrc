@@ -349,3 +349,65 @@ nmap <Leader>o o<Esc>
 "     let filePath=expand('%:p')
 "     exe ':!open ' . filePath '-a "MacDown"'
 " endfunc
+
+" usage :call GenMarkdownSectionNum    给markdown 文件生成目录编号
+function! GenMarkdownSectionNum()
+  if &ft != "markdown"
+    echohl Error
+    echo "filetype is not markdown"
+    echohl None
+    return
+  endif
+
+  let lvl = []
+  let sect = []
+  let out = ""
+  for i in range(1, line('$'), 1)
+    let line = getline(i)
+    let heading_lvl = strlen(substitute(line, '^\(#*\).*', '\1', ''))
+    if heading_lvl < 2
+      continue
+    endif
+    " there should be only 1 H1, topmost, on a conventional web page
+    " we should generate section numbers begin with the first heading level 2
+    if len(lvl) == 0
+      if heading_lvl != 2 " count from level 2
+        echohl Error
+        echo "subsection must have parent section, ignore illegal heading line at line " . i
+        echohl None
+        continue
+      endif
+      call add(sect, 1)
+      call add(lvl, heading_lvl)
+    else
+      if lvl[-1] == heading_lvl
+        let sect[-1] = sect[-1] + 1
+      elseif lvl[-1] > heading_lvl " pop all lvl less than heading_lvl from tail
+        while len(lvl) != 0 && lvl[-1] > heading_lvl
+          call remove(lvl, -1)
+          call remove(sect, -1)
+        endwhile
+        let sect[-1] = sect[-1] + 1
+      elseif lvl[-1] < heading_lvl
+        if heading_lvl - lvl[-1] != 1
+          echohl Error
+          echo "subsection must have parent section, ignore illegal heading line at line " . i
+          echohl None
+          continue
+        endif
+        call add(sect, 1)
+        call add(lvl, heading_lvl)
+      endif
+    endif
+
+    let cur_sect = ""
+    for j in sect
+      let cur_sect = cur_sect . "." . j
+    endfor
+    let cur_sect = cur_sect[1:]
+    let out = out . " " . cur_sect
+    call setline(i, substitute(line, '^\(#\+\) \?\([0-9.]\+ \)\? *\(.*\)', '\1 ' . cur_sect . ' \3', line))
+  endfor
+  " echo lvl sect out
+  echo out
+endfunc

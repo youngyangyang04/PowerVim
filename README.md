@@ -21,7 +21,7 @@ Make your vim more power and much easer.
 ```bash
 git clone https://github.com/youngyangyang04/PowerVim.git
 cd PowerVim
-ssh install.sh
+sh install.sh
 ```
 # Feature
 * CPP/PHP/JAVA code completion and you can add code keyword list for any language completion

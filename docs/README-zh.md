@@ -15,7 +15,7 @@
 ```bash
 git clone https://github.com/youngyangyang04/PowerVim.git
 cd PowerVim
-ssh install.sh
+sh install.sh
 ```
 # 特性
 * CPP、PHP代码补全，如果需要其他语言补全，可自行配置关键字列表在dictionary目录下

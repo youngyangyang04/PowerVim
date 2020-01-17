@@ -55,7 +55,7 @@ Normal Model Keyboard Shortcuts
 ;z              // Switch to the shell interface，and "fg" go back
 ;s              // Horizontal separation of window
 ;v              // Vertical separation of window
-;fw             // Search keyword around the project
+;fw             // Search keyword around the project, make sure you have installed ack
 ;ff             // Search filename around the project
 ;gt             // Jump to the definition of the keyword where the cursor is located, but make sure you have make ctags
 ;gr             // Go back for ";gt"

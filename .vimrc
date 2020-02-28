@@ -320,7 +320,7 @@ autocmd BufEnter * silent! lcd %:p:h
 set tags+=/Users/sunxiuyang/Documents/workplace/brpc/tags
 
 " complete with no first suggestion 
-:set completeopt+=noinsert
+" :set completeopt+=noinsert
 
 set completeopt=menu,menuone  
 let OmniCpp_MayCompleteDot=1    "  打开  . 操作符
@@ -342,10 +342,11 @@ nmap <leader>jg <Plug>(JavaComplete-Generate-AccessorGetter)
 nmap <leader>ja <Plug>(JavaComplete-Generate-AccessorSetterGetter)
 nmap <Leader>o o<Esc>
 
-
+:set syntax=markdown
+au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+" au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown 
 " for me
-" func MarkdownSet() 
-
-"     let filePath=expand('%:p')
-"     exe ':!open ' . filePath '-a "MacDown"'
-" endfunc
+func MarkdownSet() 
+    let filePath=expand('%:p')
+    exe ':!open ' . filePath '-a "MacDown"'
+endfunc

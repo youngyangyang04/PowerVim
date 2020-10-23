@@ -53,6 +53,9 @@ let curpwd = getcwd()
 " vim自身命令行模式智能补全
 set wildmenu
 
+" 不产生.swp文件
+set noswapfile
+
 " 禁止光标闪烁
 " set gcr=a:block-blinkon0
 
@@ -230,6 +233,8 @@ inoremap <C-v> <Esc>:r ~/tmp/clipboard.txt <CR>
 " 编译快捷键
 autocmd filetype python nnoremap <F1> :w <bar> exec '!python '.shellescape('%')<CR> autocmd filetype c nnoremap <F1> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 autocmd filetype cpp nnoremap <F1> :w <bar> exec '!g++ --std=c++11 -pthread '.shellescape('%').' -o ./bin/'.shellescape('%:r').' && ./bin/'.shellescape('%:r')<CR>
+" autocmd filetype dot nnoremap <F1> :w <bar> exec '!dot -Tsvg '.shellescape('%').' > ./svg/'.shellescape('%:r').' && open ./bin/'.shellescape('%:r')<CR>
+autocmd filetype dot nnoremap <F1> :w <bar> exec '!dot -Tsvg sqlparse.dot > sqlparse.svg'<CR>
 autocmd Filetype java nnoremap <F1> :w <bar> exec '!javac '.shellescape('%'). ' -d ./bin'<CR>
 autocmd filetype java nnoremap <F2> :w <bar> exec '!java -cp ./bin '.shellescape('%:r')<CR>
 
@@ -242,7 +247,7 @@ func SetTitle()
     if &filetype == 'sh'
         call setline(1,"\#########################################################################")
         call append(line("."),   "\# File Name:    ".expand("%"))
-        call append(line(".")+1, "\# Author:       sunxiuyang")
+        call append(line(".")+1, "\# Author:       程序员Carl")
         call append(line(".")+2, "\# mail:         sunxiuyang04@gmail.com")
         call append(line(".")+3, "\# Created Time: ".strftime("%c"))
         call append(line(".")+4, "\#########################################################################")
@@ -251,8 +256,8 @@ func SetTitle()
     else
         call setline(1, "/* ************************************************************************")
         call append(line("."),   "> File Name:     ".expand("%"))
-        call append(line(".")+1, "> Author:        sunxiuyang")
-        call append(line(".")+2, "> Mail:          sunxiuyang04@gmail.com ")
+        call append(line(".")+1, "> Author:        程序员Carl")
+        call append(line(".")+2, "> 微信公众号:    代码随想录")
         call append(line(".")+3, "> Created Time:  ".strftime("%c"))
         call append(line(".")+4, "> Description:   ")
         call append(line(".")+5, " ************************************************************************/")
@@ -280,6 +285,16 @@ endfunc
 nmap pc :call SetPic() <CR>
 func SetPic()
         call append(line("."), "\<img src='' width=600> </img></div>")
+endfunc
+
+nmap vi :call SetVideo() <CR>
+func SetVideo()
+        call append(line("."), "\<video src='1.mp4' controls='controls' width='640' height='320' autoplay='autoplay'> Your browser does not support the video tag.</video></div>")
+endfunc
+
+nmap cl :call SetCollor() <CR>
+func SetCollor()
+        call append(line("."), "<span  style='color: #f16707;'> </span>")
 endfunc
 
 " vim cc
@@ -349,4 +364,66 @@ au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 func MarkdownSet() 
     let filePath=expand('%:p')
     exe ':!open ' . filePath '-a "MacDown"'
+endfunc
+
+" usage :call GenMarkdownSectionNum    给markdown 文件生成目录编号
+function! GenMarkdownSectionNum()
+  if &ft != "markdown"
+    echohl Error
+    echo "filetype is not markdown"
+    echohl None
+    return
+  endif
+
+  let lvl = []
+  let sect = []
+  let out = ""
+  for i in range(1, line('$'), 1)
+    let line = getline(i)
+    let heading_lvl = strlen(substitute(line, '^\(#*\).*', '\1', ''))
+    if heading_lvl < 2
+      continue
+    endif
+    " there should be only 1 H1, topmost, on a conventional web page
+    " we should generate section numbers begin with the first heading level 2
+    if len(lvl) == 0
+      if heading_lvl != 2 " count from level 2
+        echohl Error
+        echo "subsection must have parent section, ignore illegal heading line at line " . i
+        echohl None
+        continue
+      endif
+      call add(sect, 1)
+      call add(lvl, heading_lvl)
+    else
+      if lvl[-1] == heading_lvl
+        let sect[-1] = sect[-1] + 1
+      elseif lvl[-1] > heading_lvl " pop all lvl less than heading_lvl from tail
+        while len(lvl) != 0 && lvl[-1] > heading_lvl
+          call remove(lvl, -1)
+          call remove(sect, -1)
+        endwhile
+        let sect[-1] = sect[-1] + 1
+      elseif lvl[-1] < heading_lvl
+        if heading_lvl - lvl[-1] != 1
+          echohl Error
+          echo "subsection must have parent section, ignore illegal heading line at line " . i
+          echohl None
+          continue
+        endif
+        call add(sect, 1)
+        call add(lvl, heading_lvl)
+      endif
+    endif
+
+    let cur_sect = ""
+    for j in sect
+      let cur_sect = cur_sect . "." . j
+    endfor
+    let cur_sect = cur_sect[1:]
+    let out = out . " " . cur_sect
+    call setline(i, substitute(line, '^\(#\+\) \?\([0-9.]\+ \)\? *\(.*\)', '\1 ' . cur_sect . ' \3', line))
+  endfor
+  " echo lvl sect out
+  echo out
 endfunc

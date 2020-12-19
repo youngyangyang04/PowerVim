@@ -77,6 +77,7 @@ gc              // Comment out the target of a motion
 gcc             // Comment out a line (takes a count)
 {               // Up block of code 
 }               // Down block of code
+di+(            // Delete the content in the parentheses
 ```
 
 # Plugins

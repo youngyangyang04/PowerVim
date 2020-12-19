@@ -64,6 +64,7 @@ gc              // 快速注释选中的块（是visual模式下选中的块）
 gcc             // 快速当前行
 {               // 光标向上移动一个代码块
 }               // 光标向下移动一个代码块
+di+(            // 删除括号里的内容
 ```
 # 插件
 * a.vim [https://github.com/vim-scripts/a.vim](https://github.com/vim-scripts/a.vim)

@@ -8,10 +8,10 @@ if exists('g:loaded_vim_macdown')
 endif
 let g:loaded_vim_macdown = 1
 
-if !has('macunix') || !(system('uname') =~ "Darwin")
-  echo 'macdown.vim only works on a Mac'
-  finish
-endif
+"if !has('macunix') || !(system('uname') =~ "Darwin")
+"  echo 'macdown.vim only works on a Mac'
+"  finish
+"endif
 
 " check if Macdown is available on this machine
 

@@ -62,7 +62,9 @@ dsfa;w
 // Shortcuts without ;
 e               // 快速删除光标所在的词 
 tabc            // 关闭当前tab，可以用:tabnew来打开一个新的tab Close tab, of course you should :tabnew a file first. 
-F1              // 编译C++代码，自己写的C++例子的时候一键编译。前提手动在当前目录建一个bin文件夹，这是用来存放编译产生的执行文件 
+F1              // 编译并运行C++文件，自己写的C++例子的时候一键编译。前提手动在当前目录建一个bin文件夹，这是用来存放编译产生的执行文件 
+F1              // 编译Java文件
+F2              // 运行Java编译的class文件，一般如果要编译并运行Java文件 按F1编译，在按F2运行
 gc              // 快速注释选中的块（是visual模式下选中的块） 
 gcc             // 快速当前行
 {               // 光标向上移动一个代码块

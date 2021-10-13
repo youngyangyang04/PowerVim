@@ -112,7 +112,8 @@ PowerVim没有安装youcompleteme来完善代码补全，主要有以下方面
 
 <a name="公众号"></a>
 
-![](https://code-thinking.cdn.bcebos.com/pics/01%E4%BA%8C%E7%BB%B4%E7%A0%81%E4%B8%80.jpg)
+<div align="center"><img src=https://code-thinking.cdn.bcebos.com/pics/01二维码一.jpg width=500> </img></div>
+
 
 
 

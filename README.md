@@ -21,7 +21,7 @@ cd PowerVim
 sh install.sh
 ```
 # 特性
-* CPP、PHP代码补全，如果需要其他语言补全，可自行配置关键字列表在dictionary目录下
+* CPP、PHP、JAVA代码补全，如果需要其他语言补全，可自行配置关键字列表在PowerVim/.vim/dictionary目录下
 * 显示文件函数变量列表
 * MiniBuf显示打开过的文件
 * 语法高亮支持C++ (including C++11), go,java, php, html, json and markdown
@@ -33,8 +33,7 @@ sh install.sh
 
 # 使用方法
 PowerVim的快捷键以;为开始
-PowerVim的快捷键以mac的键盘方便性而设计，当然其他键盘也很方便。这里列出的快捷键是PowerVim配置的，vim通用的快捷键就不一一列出。
-Shortcuts is designed for mac Keyboard, more convenient and comfortable. Of course normal Keyboard can also use it Conveniently.
+这里列出的快捷键是PowerVim配置的，vim通用的快捷键就不一一列出。
 ```
 正常模式下的快捷键（非插入模式）
 ;n              // 打开文件目录树显示在屏幕左侧
@@ -113,7 +112,7 @@ PowerVim没有安装youcompleteme来完善代码补全，主要有以下方面
 
 <a name="公众号"></a>
 
-![](https://github.com/youngyangyang04/leetcode-master/blob/master/pics/%E5%85%AC%E4%BC%97%E5%8F%B7.png)
+![](https://code-thinking.cdn.bcebos.com/pics/01%E4%BA%8C%E7%BB%B4%E7%A0%81%E4%B8%80.jpg)
 
 
 

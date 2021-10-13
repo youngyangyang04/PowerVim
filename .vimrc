@@ -1,3 +1,5 @@
+" Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录 
+"
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
 
@@ -117,7 +119,7 @@ nmap <Leader>s :Sex<CR>
 nmap <Leader>v :Vex<CR>
 " 全局替换
 nmap <Leader>r :%s/fileName-/fileName+/g
-" align
+" align 表格对齐
 nmap <Leader>t :Tab /
 " 打tag
 " --c++-kinds=+p  : Adds prototypes in the database for C/C++ files.
@@ -284,7 +286,12 @@ endfunc
 
 nmap pc :call SetPic() <CR>
 func SetPic()
-        call append(line("."), "\<img src='' width=600> </img></div>")
+        call append(line("."), "\<img src='' width=600 alt=''> </img></div>")
+endfunc
+
+nmap pi :call SetPic1() <CR>
+func SetPic1()
+        call append(line("."), "\![]()")
 endfunc
 
 nmap vi :call SetVideo() <CR>

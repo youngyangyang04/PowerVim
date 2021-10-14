@@ -8,7 +8,6 @@ execute pathogen#infect()
 " syntax on
 filetype plugin indent on
 
-
 "高亮搜索关键词"
 let g:ackhighlight = 1
 "修改快速预览窗口高度为15
@@ -240,6 +239,7 @@ autocmd filetype dot nnoremap <F1> :w <bar> exec '!dot -Tsvg sqlparse.dot > sqlp
 autocmd Filetype java nnoremap <F1> :w <bar> exec '!javac '.shellescape('%'). ' -d ./bin'<CR>
 autocmd filetype java nnoremap <F2> :w <bar> exec '!java -cp ./bin '.shellescape('%:r')<CR>
 
+
 let g:tlist_markdown_settings = 'markdown;h:Headlins'
 "新建.c,.h,.sh,.Java文件，自动插入文件头
 autocmd BufNewFile *.cpp,*.[ch],*.sh,*.Java,*.go exec ":call SetTitle()"
@@ -250,7 +250,7 @@ func SetTitle()
         call setline(1,"\#########################################################################")
         call append(line("."),   "\# File Name:    ".expand("%"))
         call append(line(".")+1, "\# Author:       程序员Carl")
-        call append(line(".")+2, "\# mail:         sunxiuyang04@gmail.com")
+        call append(line(".")+2, "\# mail:         programmercarl@163.com")
         call append(line(".")+3, "\# Created Time: ".strftime("%c"))
         call append(line(".")+4, "\#########################################################################")
         call append(line(".")+5, "\#!/bin/bash")
@@ -310,6 +310,8 @@ func SetCC()
     call append(line("."), "// vim: et tw=100 ts=4 sw=4 cc=120")  
 endfunc
 
+" Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录 
+
 " 使用的背景主题
 colorscheme Monokai_Gavin
 " 添加自动补全字典
@@ -339,7 +341,7 @@ let g:syntastic_check_on_wq = 0
 " set autochdir
 autocmd BufEnter * silent! lcd %:p:h
 " 需要在哪个目录有类函数补全功能，就加载哪个目录的tags 
-set tags+=/Users/sunxiuyang/Documents/workplace/brpc/tags
+" set tags+=/Users/XXX/Documents/workplace/brpc/tags
 
 " complete with no first suggestion 
 " :set completeopt+=noinsert

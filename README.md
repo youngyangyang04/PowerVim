@@ -116,7 +116,8 @@ PowerVim没有安装youcompleteme来完善代码补全，主要有以下方面
 也欢迎与我交流，备注：「个人简单介绍」 + 交流，围观朋友圈，做点赞之交（备注没有自我介绍不通过哦）
 
 <a name="微信"></a>
-<img src="https://img-blog.csdnimg.cn/20200814140330894.png" data-img="1" width="175" height="175">
+<div align="center"><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/WechatIMG82.jpeg" data-img="1" width="200" height="200"></img></div>
+
 
 # 公众号
 
@@ -127,8 +128,8 @@ PowerVim没有安装youcompleteme来完善代码补全，主要有以下方面
 **来看看就知道了，你会发现相见恨晚！**
 
 <a name="公众号"></a>
+<div align="center"><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20211026122841.png" data-img="1" width="650" height="500"></img></div>
 
-<div align="center"><img src=https://code-thinking.cdn.bcebos.com/pics/01二维码一.jpg width=500> </img></div>
 
 
 

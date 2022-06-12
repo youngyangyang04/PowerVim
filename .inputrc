@@ -1,0 +1,6 @@
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+set show-all-if-ambiguous on
+set completion-ignore-case on

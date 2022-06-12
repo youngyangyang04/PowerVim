@@ -40,7 +40,7 @@ set nocp
 "set encoding=utf-8
 ""set encoding=gb2312
 set langmenu=zh_CN.gb2312
-language message zh_CN.gb2312
+"language message zh_CN.gb2312
 
 set fileencoding=gbk2312
 set ts=4
@@ -241,8 +241,8 @@ set hlsearch
 syntax enable
 syntax on
 " 使用ctrlc, v就可以实现vim之间的复制粘贴
-vnoremap <C-c> :w! ~/tmp/clipboard.txt <CR>
-inoremap <C-v> <Esc>:r ~/tmp/clipboard.txt <CR>
+vnoremap <C-c> :w! ~/.tmp/clipboard.txt <CR>
+inoremap <C-v> <Esc>:r ~/.tmp/clipboard.txt <CR>
 " 编译快捷键
 autocmd filetype python nnoremap <F1> :w <bar> exec '!python '.shellescape('%')<CR> autocmd filetype c nnoremap <F1> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 autocmd filetype cpp nnoremap <F1> :w <bar> exec '!g++ --std=c++11 -pthread '.shellescape('%').' -o ./bin/'.shellescape('%:r').' && ./bin/'.shellescape('%:r')<CR>
@@ -261,8 +261,8 @@ func SetTitle()
     if &filetype == 'sh'
         call setline(1,"\#########################################################################")
         call append(line("."),   "\# File Name:    ".expand("%"))
-        call append(line(".")+1, "\# Author:       程序员Carl")
-        call append(line(".")+2, "\# mail:         programmercarl@163.com")
+        call append(line(".")+1, "\# Author:       Chris")
+        call append(line(".")+2, "\# mail:         haiqianghuang69@gmail.com")
         call append(line(".")+3, "\# Created Time: ".strftime("%c"))
         call append(line(".")+4, "\#########################################################################")
         call append(line(".")+5, "\#!/bin/bash")
@@ -270,12 +270,11 @@ func SetTitle()
     else
         call setline(1, "/* ************************************************************************")
         call append(line("."),   "> File Name:     ".expand("%"))
-        call append(line(".")+1, "> Author:        程序员Carl")
-        call append(line(".")+2, "> 微信公众号:    代码随想录")
-        call append(line(".")+3, "> Created Time:  ".strftime("%c"))
-        call append(line(".")+4, "> Description:   ")
-        call append(line(".")+5, " ************************************************************************/")
-        call append(line(".")+6, "")
+        call append(line(".")+1, "> Author:        Chris")
+        call append(line(".")+2, "> Created Time:  ".strftime("%c"))
+        call append(line(".")+3, "> Description:   ")
+        call append(line(".")+4, " ************************************************************************/")
+        call append(line(".")+5, "")
     endif
     "新建文件后，自动定位到文件末尾
     autocmd BufNewFile * normal G

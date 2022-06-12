@@ -35,6 +35,10 @@ echo "\033[0;32mln -s ${PowerVim}/.vim .vim\033[0m"
 ln -s ${PowerVim}/.vim .vim
 echo "\033[0;32mln -s ${PowerVim}/.ctags .ctags\033[0m"
 ln -s ${PowerVim}/.ctags .ctags
+ln -s ${PowerVim}/.inputrc .inputrc
+
+mkdir .tmp
+
  # _____                    __      ___           
  # |  __ \                   \ \    / (_)          
  # | |__) |____      _____ _ _\ \  / / _ _ __ ___  

@@ -198,9 +198,21 @@ set fenc=" "
 set showmatch
 "括号匹配
 inoremap ( ()<ESC>i
+inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap [ []<ESC>i
+inoremap ] <c-r>=ClosePair(']')<CR>
+inoremap < <><ESC>i
+inoremap > <c-r>=ClosePair('>')<CR>
 inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
+function ClosePair(char)
+    if getline('.')[col('.') - 1] == a:char
+        return "\<ESC>la"
+    else
+        return a:char
+    endif
+endfunction
+
 set selectmode=mouse,key
 set selection=exclusive
 set mouse=n "可视模式下使用鼠标，set mouse=a这个命令导致在vim下复制粘贴不好用

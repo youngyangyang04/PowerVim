@@ -132,6 +132,9 @@ PowerVim没有安装youcompleteme来完善代码补全，主要有以下方面
 
 
 
-
+# 添加个人常用习惯
+1.新增.inputrc文件，作用以及用法如下：
+终端输入前面内容后，可以通过上下箭头选择历史输入的内容，比如说cd work,上下箭头可以找到曾经输入过的cd workspace/PowerVim
+按tab键可以忽略大小写，比如说cd pow，按tab键后，能自动显示成cd PowerVim,（目前个人电脑没有生效，未知原因）
 
 

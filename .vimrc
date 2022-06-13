@@ -201,8 +201,8 @@ inoremap ( ()<ESC>i
 inoremap ) <c-r>=ClosePair(')')<CR>
 inoremap [ []<ESC>i
 inoremap ] <c-r>=ClosePair(']')<CR>
-inoremap < <><ESC>i
-inoremap > <c-r>=ClosePair('>')<CR>
+""inoremap < <><ESC>i ""还是不要做自动补全，会遇到只使用 <, > 等比较符号
+""inoremap > <c-r>=ClosePair('>')<CR>
 inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
 function ClosePair(char)

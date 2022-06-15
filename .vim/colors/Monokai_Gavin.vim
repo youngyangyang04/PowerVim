@@ -229,7 +229,7 @@ hi Statement ctermfg=yellow cterm=none guifg=#ffff60 gui=none
 hi PreProc ctermfg=magenta guifg=#ff80ff gui=none cterm=none
 hi type ctermfg=cyan guifg=#60ff60 gui=none cterm=none
 hi Underlined cterm=underline term=underline
-hi Ignore guifg=none ctermfg=none
+""hi Ignore guifg=none ctermfg=none
 
 " suggested by tigmoid, 2008 Jul 18
 hi Pmenu guifg=#c0c0c0 guibg=#404080 ctermfg=white ctermbg=darkgray

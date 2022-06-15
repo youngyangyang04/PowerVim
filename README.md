@@ -65,7 +65,7 @@ PowerVim的快捷键以;为开始
 ;z              // 切回shell交互命令，输入fg在切回vim，非常实用
 ;s              // 水平分屏，并打开文件目录选取想打开的文件，如果想新建文件，;e 就好 
 ;v              // 竖直分屏，并打开文件目录选取想打开的文件，如果想新建文件，;e 就好 
-;fw             // 查找项目内关键字，前提是你的系统已经按照了ACK 
+;fw             // 查找项目内关键字，前提是你的系统已经安装了ACK 
 ;ff             // 查找项目内文件名 
 ;gt             // 跳转到变量或者函数定义的地方，前提是安装ctags，并且在在PowerVim输入 ;tg命令 Jump to the definition of the keyword where the cursor is located, but make sure you have make ctags
 ;gr             // 跳回，对应着;gt

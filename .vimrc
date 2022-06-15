@@ -1,5 +1,10 @@
 " Hello，我是PowerVim的作者，程序员Carl，欢迎关注我的微信公众号：代码随想录 
 "
+"personal modify
+let Tlist_Show_One_File=1
+let Tlist_Exit_OnlyWindow=1
+let Tlist_Ctags_Cmd="/usr/bin/ctags"
+"
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
 
@@ -9,7 +14,7 @@ execute pathogen#infect()
 filetype plugin indent on
 
 "高亮搜索关键词"
-let g:ackhighlight = 1
+""let g:ackhighlight = 0
 "修改快速预览窗口高度为15
 let g:ack_qhandler = "botright copen 15"
 " Use Vim settings, rather then Vi settings (much better!).
@@ -172,7 +177,6 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 set nofen
 
 let cwd=""
-set tags=tags
 "cs add cscope.out 
 let g:miniBufExplMapWindowNavArrows = 1
 "允许光标在任何位置时用CTRL-TAB遍历buffer
@@ -226,7 +230,7 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 
 
 set ruler           " 显示标尺"
-autocmd InsertEnter * se cul    " 用浅色高亮当前行"
+""autocmd InsertEnter * se cul    " 用浅色高亮当前行"
 set shortmess=atI   " 启动的时候不显示那个援助乌干达儿童的提示
 
 " :colorscheme desert     " 设置主题
@@ -246,6 +250,9 @@ inoremap <C-v> <Esc>:r ~/.tmp/clipboard.txt <CR>
 " 编译快捷键
 autocmd filetype python nnoremap <F1> :w <bar> exec '!python '.shellescape('%')<CR> autocmd filetype c nnoremap <F1> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
 autocmd filetype cpp nnoremap <F1> :w <bar> exec '!g++ --std=c++11 -pthread '.shellescape('%').' -o ./bin/'.shellescape('%:r').' && ./bin/'.shellescape('%:r')<CR>
+
+autocmd filetype c nnoremap <F1> :w <bar> exec '!gcc '.shellescape('%').' -o ./bin/'.shellescape('%:r').' && ./bin/'.shellescape('%:r')<CR>
+
 " autocmd filetype dot nnoremap <F1> :w <bar> exec '!dot -Tsvg '.shellescape('%').' > ./svg/'.shellescape('%:r').' && open ./bin/'.shellescape('%:r')<CR>
 autocmd filetype dot nnoremap <F1> :w <bar> exec '!dot -Tsvg sqlparse.dot > sqlparse.svg'<CR>
 autocmd Filetype java nnoremap <F1> :w <bar> exec '!javac '.shellescape('%'). ' -d ./bin'<CR>

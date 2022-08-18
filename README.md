@@ -30,7 +30,7 @@ cd PowerVim
 sh install.sh
 ```
 
-在按照的过程中 ubantu 操作系统 会出现 这样的问题`Syntax error: "(" unexpected`，是系统语言问题，看本项目上方issue，已经给出解决办法
+在按照的过程中 ubuntu 操作系统 会出现 这样的问题`Syntax error: "(" unexpected`，是系统语言问题，看本项目上方issue，已经给出解决办法
 
 # 特性
 

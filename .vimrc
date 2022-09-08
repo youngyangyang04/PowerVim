@@ -53,7 +53,7 @@ set sw=4
 set smartindent
 set showmatch        " Show matching brackets.
 set guioptions-=T
-set expandtab
+set noexpandtab "设置tab键位空格还是tab
 
 let curpwd = getcwd()
 " vim自身命令行模式智能补全

@@ -1,2 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0

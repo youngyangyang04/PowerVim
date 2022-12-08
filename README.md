@@ -111,25 +111,11 @@ PowerVim没有安装youcompleteme来完善代码补全，主要有以下方面
 
 # 关于作者
 
-大家好，我是程序员Carl，哈工大师兄，ACM 校赛、黑龙江省赛、东北四省赛金牌、亚洲区域赛奖牌获得者，先后在腾讯和百度从事分布式技术研发多年。
+大家好，我是程序员Carl，哈工大师兄，[《代码随想录》](https://programmercarl.com/other/publish.html)作者，先后在腾讯和百度从事分布式技术研发工作。 
 
-也欢迎与我交流，备注：「个人简单介绍」 + 交流，围观朋友圈，做点赞之交（备注没有自我介绍不通过哦）
-
-<a name="微信"></a>
-<div align="center"><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/WechatIMG82.jpeg" data-img="1" width="200" height="200"></img></div>
-
-
-# 公众号
-
-更多精彩文章持续更新，微信搜索：「代码随想录」第一时间围观，关注后回复：666，可以获得我多年总结的算法原创PDF。
-
-**「代码随想录」每天准时为你推送一篇经典面试题目，帮你梳理算法知识体系，轻松学习算法！**，并且公众号里有大量学习资源，也有我自己的学习心得和方法总结，更有上万录友们在这里打卡学习。
-
-**来看看就知道了，你会发现相见恨晚！**
-
-<a name="公众号"></a>
-<div align="center"><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20211026122841.png" data-img="1" width="650" height="500"></img></div>
-
+* [代码随想录网站](https://programmercarl.com)
+* [代码随想录Github](https://github.com/youngyangyang04/leetcode-master)
+* [代码随想录算法公开课](https://www.bilibili.com/video/BV1fA4y1o715)
 
 
 

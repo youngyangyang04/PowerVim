@@ -1,3 +1,5 @@
+👉 推荐 [Gitee同步](https://gitee.com/programmercarl/power-vim)
+
 # [English Version](./docs/README-en.md)
 
 # PowerVim

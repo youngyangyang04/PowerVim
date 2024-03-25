@@ -27,7 +27,7 @@ PowerVim的安装非常简单，我已经写好了安装脚本，只要执行以
 ```bash
 git clone https://github.com/youngyangyang04/PowerVim.git
 cd PowerVim
-sh install.sh
+bash install.sh
 ```
 
 

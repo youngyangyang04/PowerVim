@@ -1,5 +1,8 @@
 👉 推荐 [Gitee同步](https://gitee.com/programmercarl/power-vim)
 
+> 版权申明： 本项目为我（[程序员Carl](https://github.com/youngyangyang04)）的原创。引用本项目文章请注明出处，例如：转自 https://github.com/youngyangyang04/PowerVim
+> 发现恶意抄袭或搬运，会动用法律武器维护自己的权益。让我们一起维护一个良好的技术创作环境！
+
 # [English Version](./docs/README-en.md)
 
 # PowerVim
@@ -33,8 +36,16 @@ sh install.sh
 ```
 
 
-在按照的过程中 ubuntu 操作系统 会出现 这样的问题`Syntax error: "(" unexpected`，是系统语言问题，看本项目上方issue，已经给出解决办法
+在按照的过程中 ubuntu 操作系统 会出现 这样的问题`Syntax error: "(" unexpected`，是系统语言问题，看本项目上方[issue](https://github.com/youngyangyang04/PowerVim/issues)，已经给出解决办法
 
+
+如果报错 `Taglist: Exuberant ctags (http://ctags.sf.net) not found in PATH. Plugin is not loaded.` 则是没有安装Taglist插件 
+
+# 卸载 
+
+```bash
+sh uninstall.sh
+```
 
 # 特性
 

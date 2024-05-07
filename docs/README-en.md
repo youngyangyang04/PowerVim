@@ -23,6 +23,12 @@ git clone https://github.com/youngyangyang04/PowerVim.git
 cd PowerVim
 sh install.sh
 ```
+# Uninstall
+
+```bash
+sh uninstall.sh
+```
+
 # Feature
 * CPP/PHP/JAVA code completion and you can add code keyword list for any language completion
 * Taglist for functuon and variables list
